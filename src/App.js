@@ -1,12 +1,136 @@
 import logo from './logo.svg';
 import './App.css';
 import './css/tooplate-wave-cafe.css';
+import { useState } from 'react';
+
+let coffee = [
+  {
+    src: "img/iced-americano.png",
+    title: "Iced Americano",
+    description: "Many people choose iced Americano for its taste - refreshing, sour and bitter.",
+    price: "$3.25",
+    tags: [
+      "iced"
+    ],
+  },
+  {
+    src: "img/iced-cappuccino.png",
+    title: "Iced Cappuccino",
+    description: "An Italian coffee drink made from espresso. It has a mild taste with a slight coffee bitterness.",
+    price: "$4.50",
+    tags: [
+      "iced"
+    ],
+  },
+  {
+    src: "img/iced-espresso.png",
+    title: "Iced Espresso",
+    description: "This is a great opportunity to experiment by adding different ingredients from our range to the basic recipe.",
+    price: "$4.25",
+    tags: [
+      "iced"
+    ],
+  },
+  {
+    src: "img/iced-latte.png",
+    title: "Iced Latte",
+    description: "The classic drink is made from espresso and milk. The ingredients are taken in a 1:3 ratio, and a small amount of foam is added on top.",
+    price: "$3.50",
+    tags: [
+      "iced"
+    ],
+  },
+  {
+    src: "img/hot-americano.png",
+    title: "Hot Americano",
+    description: "Here is a short description for the item along with a squared thumbnail.",
+    price: "$4.50",
+    tags: [
+      "hot"
+    ],
+  },
+  {
+    src: "img/hot-cappuccino.png",
+    title: "Hot Cappuccino",
+    description: "Here is a list of 4 items that can add more as you need. Only content area will be scrolling.",
+    price: "$4.50",
+    tags: [
+      "hot"
+    ],
+  },
+  {
+    src: "img/hot-espresso.png",
+    title: "Hot Espresso",
+    description: "Left side logo and main menu are fixed. The video background is fixed.",
+    price: "$3.50",
+    tags: [
+      "hot"
+    ],
+  },
+  {
+    src: "img/hot-latte.png",
+    title: "Hot Latte",
+    description: "Page contents are organized into 3 tabs to show different lists of items.",
+    price: "$2.50",
+    tags: [
+      "hot"
+    ],
+  },
+  {
+    src: "img/smoothie-1.png",
+    title: "Strawberry Smoothie",
+    description: "Here is a short description for the item along with a squared thumbnail.",
+    price: "$5.50",
+    tags: [
+      "fruit"
+    ],
+  },
+  {
+    src: "img/smoothie-2.png",
+    title: "Red Berry Smoothie",
+    description: "Here is a list of 4 items or add more. You can use this template for commercial purposes.",
+    price: "$6.50",
+    tags: [
+      "fruit"
+    ],
+  },
+  {
+    src: "img/smoothie-3.png",
+    title: "Pineapple Smoothie",
+    description: "Left side logo and main menu are fixed. The video background is fixed.",
+    price: "$6.50",
+    tags: [
+      "fruit"
+    ],
+  },
+  {
+    src: "img/smoothie-4.png",
+    title: "Spinach Smoothie",
+    description: "You are not allowed to redistribute the template ZIP file on other template sites.",
+    price: "$7.50",
+    tags: [
+      "fruit"
+    ],
+  },
+]
+
 
 
 function App() {
-  function handleClick() {
-    console.log(123);
+
+  const [tag, setTag] = useState("iced", "hot", "fruit");
+
+  function filterCoffee(e) {
+    setTag(e.target.dataset.tag);
   }
+  let coffeeJsx = []
+  coffee.forEach((coff, i) => {
+    if (coff.tags.includes(tag)) {
+      coffeeJsx.push(<CoffeeItem key={i} coffee={coff} />);
+    }
+  });
+
+
   return (
     <>
       <div className="tm-container">
@@ -23,25 +147,25 @@ function App() {
                   <li className="tm-page-nav-item">
                     <a href="#drink" className="tm-page-link active">
                       <i className="fas fa-mug-hot tm-page-link-icon" />
-                      <span>Drink Menu</span>
+                      <span>Меню</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#about" className="tm-page-link">
                       <i className="fas fa-users tm-page-link-icon" />
-                      <span>About Us</span>
+                      <span>О нас</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#special" className="tm-page-link">
                       <i className="fas fa-glass-martini tm-page-link-icon" />
-                      <span>Special Items</span>
+                      <span>Акции</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#contact" className="tm-page-link">
                       <i className="fas fa-comments tm-page-link-icon" />
-                      <span>Contact</span>
+                      <span>Контакты</span>
                     </a>
                   </li>
                 </ul>
@@ -55,17 +179,17 @@ function App() {
                 <nav className="tm-black-bg tm-drinks-nav">
                   <ul>
                     <li>
-                      <a href="#" className="tm-tab-link active" data-id="cold">
+                      <a href="#" className="tm-tab-link active" data-id="iced" data-tag="iced" onClick={filterCoffee}>
                         Iced Coffee
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="tm-tab-link" data-id="hot">
+                      <a href="#" className="tm-tab-link" data-id="hot" data-tag="hot" onClick={filterCoffee}>
                         Hot Coffee
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="tm-tab-link" data-id="juice">
+                      <a href="#" className="tm-tab-link" data-id="fruit" data-tag="fruit" onClick={filterCoffee}>
                         Fruit Juice
                       </a>
                     </li>
@@ -73,226 +197,13 @@ function App() {
                 </nav>
                 <div id="cold" className="tm-tab-content">
                   <div className="tm-list">
-                    <div className="tm-list-item">
-                      <img
-                        src="img/iced-americano.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Iced Americano
-                          <span className="tm-list-item-price">$10.25</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a short description for the first item. Wave Cafe
-                          Template is provided by Tooplate.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/iced-cappuccino.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Iced Cappuccino
-                          <span className="tm-list-item-price">$12.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a list of 4 items or add more. You can use this
-                          template for commercial purposes.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/iced-espresso.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Iced Espresso
-                          <span className="tm-list-item-price">$14.25</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          You are not permitted to redistribute this template ZIP
-                          file on any other template websites.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/iced-latte.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Iced Latte
-                          <span className="tm-list-item-price">$11.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Contents are organized into 3 tabs. Please{" "}
-                          <a
-                            href="https://www.tooplate.com/contact"
-                            rel="nofollow"
-                            target="_parent"
-                          >
-                            contact Tooplate
-                          </a>{" "}
-                          if you have anything to ask.
-                        </p>
-                      </div>
-                    </div>
+                    {coffeeJsx}
                   </div>
                 </div>
-                <div id="hot" className="tm-tab-content">
-                  <div className="tm-list">
-                    <div className="tm-list-item">
-                      <img
-                        src="img/hot-americano.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Hot Americano
-                          <span className="tm-list-item-price">$8.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a short description for the item along with a
-                          squared thumbnail.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/hot-cappuccino.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Hot Cappuccino
-                          <span className="tm-list-item-price">$9.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a list of 4 items that can add more as you need.
-                          Only content area will be scrolling.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/hot-espresso.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Hot Espresso
-                          <span className="tm-list-item-price">$7.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Left side logo and main menu are fixed. The video
-                          background is fixed.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/hot-latte.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Hot Latte<span className="tm-list-item-price">$6.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Page contents are organized into 3 tabs to show different
-                          lists of items.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="juice" className="tm-tab-content">
-                  <div className="tm-list">
-                    <div className="tm-list-item">
-                      <img
-                        src="img/smoothie-1.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Strawberry Smoothie
-                          <span className="tm-list-item-price">$12.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a short description for the item along with a
-                          squared thumbnail.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/smoothie-2.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Red Berry Smoothie
-                          <span className="tm-list-item-price">$14.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Here is a list of 4 items or add more. You can use this
-                          template for commercial purposes.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/smoothie-3.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Pineapple Smoothie
-                          <span className="tm-list-item-price">$16.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          Left side logo and main menu are fixed. The video
-                          background is fixed.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="tm-list-item">
-                      <img
-                        src="img/smoothie-4.png"
-                        alt="Image"
-                        className="tm-list-item-img"
-                      />
-                      <div className="tm-black-bg tm-list-item-text">
-                        <h3 className="tm-list-item-name">
-                          Spinach Smoothie
-                          <span className="tm-list-item-price">$18.50</span>
-                        </h3>
-                        <p className="tm-list-item-description">
-                          You are not allowed to redistribute the template ZIP file
-                          on other template sites.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
+
+
+
                 {/* end Drink Menu Page */}
               </div>
               {/* About Us Page */}
@@ -476,29 +387,36 @@ function App() {
             </main>
           </div>
         </div>
-        <footer className="tm-site-footer">
-          <p className="tm-black-bg tm-footer-text">
-            Copyright 2020 Wave Cafe | Design:{" "}
-            <a
-              href="https://www.tooplate.com"
-              className="tm-footer-link"
-              rel="sponsored"
-              target="_parent"
-            >
-              Tooplate
-            </a>
-          </p>
-        </footer>
       </div>
       {/* Background video */}
       <div className="tm-video-wrapper">
-        <i id="tm-video-control-button" className="fas fa-pause" />
-        <video autoPlay="" muted="" loop="" id="tm-video">
-          <source src="video/wave-cafe-video-bg.mp4" type="video/mp4" />
-        </video>
+          <img src="/img/img_100.jpg"></img>
+
       </div>
     </>
   );
 }
+
+function CoffeeItem({ coffee }) {
+  return (
+    <div className="tm-list-item">
+      <img
+        src={coffee.src}
+        alt="Image"
+        className="tm-list-item-img"
+      />
+      <div className="tm-black-bg tm-list-item-text">
+        <h3 className="tm-list-item-name">
+          {coffee.title}
+          <span className="tm-list-item-price">{coffee.price}</span>
+        </h3>
+        <p className="tm-list-item-description">
+          {coffee.description}
+        </p>
+      </div>
+    </div>
+  );
+} 
+
 
 export default App;

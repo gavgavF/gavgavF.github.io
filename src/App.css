@@ -7,7 +7,7 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 18px;
     overflow-x: hidden;
-    background-color: #1E5050;
+    background-color: #3b2e3f;
 }
 
 ul {
@@ -18,7 +18,7 @@ ul {
 nav > ul > li { list-style: none; }
 
 a { 
-	color: #3CF;
+	color: #35243a;
     text-decoration: none;
     transition: all 0.3s ease; 
 }
@@ -98,7 +98,7 @@ h2 { margin-top: 0; }
     min-width: 240px;
     height: 100px;
     background-color: white;
-    color: #099;
+    color: #945ea5;
     display: flex;
     text-decoration: none;
     align-items: center;      
@@ -107,7 +107,7 @@ h2 { margin-top: 0; }
 
 .tm-page-link:hover,
 .tm-page-link.active {
-    background-color: #099;
+    background-color: #945ea5;
     color: white;
 }
 
@@ -144,8 +144,8 @@ h2 { margin-top: 0; }
 
 .tm-drinks-nav > ul > li a.active,
 .tm-drinks-nav > ul > li a:hover {
-    color: #96FEFF;
-    border-bottom: 4px solid #96FEFF;
+    color: #945ea5;
+    border-bottom: 4px solid #945ea5;
 }
 
 .tm-list-item {
@@ -161,7 +161,7 @@ h2 { margin-top: 0; }
     margin-right: 20px;
     width: 160px;
     height: 160px;
-    background-color: #099;
+    background-color: #945ea5;
 }
 
 .tm-list-item-img-big {
@@ -183,7 +183,7 @@ h2 { margin-top: 0; }
     margin-top: 0;
 }
 
-.tm-list-item-price { color: #96FEFF; }
+.tm-list-item-price { color: #945ea5; }
 .tm-site-footer { margin-top: 15px; }
 
 .tm-footer-text {
@@ -195,7 +195,7 @@ h2 { margin-top: 0; }
 .tm-tab-content { animation: fadeEffect 1s; }
 .tm-page-content { animation: fadeEffect 1s; }
 
-.tm-text-primary { color: #3CC; }
+.tm-text-primary { color: #945ea5; }
 .tm-mb-20 { margin-bottom: 20px; }
 .tm-mb-30 { margin-bottom: 30px; }
 .tm-img-right { 
@@ -263,7 +263,7 @@ h2 { margin-top: 0; }
 .tm-form-control::placeholder { color: white; }
 
 .tm-btn-primary {
-    color: #099;
+    color: #945ea5;
     background-color: white;
     border: 0;
     padding: 12px 40px;
@@ -274,7 +274,7 @@ h2 { margin-top: 0; }
 
 .tm-btn-primary:hover {
     color: white;
-    background-color: #099;
+    background-color: #945ea5;
 }
 
 .tm-align-right {

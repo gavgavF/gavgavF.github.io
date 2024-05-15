@@ -1,10 +1,4 @@
-/*
 
-Tooplate 2121 Wave Cafe
-
-https://www.tooplate.com/view/2121-wave-cafe
-
-*/
 
 html { scroll-behavior: smooth; }
 
@@ -14,7 +8,7 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 18px;
     overflow-x: hidden;
-    background-color: #1E5050;
+    background-color: #505050;
 }
 
 ul {
@@ -25,7 +19,7 @@ ul {
 nav > ul > li { list-style: none; }
 
 a { 
-	color: #3CF;
+	color: #311e36;
     text-decoration: none;
     transition: all 0.3s ease; 
 }
@@ -44,7 +38,14 @@ h2 { margin-top: 0; }
     z-index: -1000;
 }
 
-.tm-video-wrapper { position: relative; }
+.tm-video-wrapper { position: relative;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
 
 #tm-video-control-button {
     cursor: pointer;
@@ -52,7 +53,7 @@ h2 { margin-top: 0; }
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(241, 36, 36, 0.5);
     color: white;    
     padding: 10px;
 }
@@ -72,13 +73,14 @@ h2 { margin-top: 0; }
 .tm-left-inner { position: fixed; }
 
 .tm-site-header {
-    background-color: white;
-    color: #099;
+    background-color: #db98f0;
+    color: #311e36;
     width: 100%;
     height: 160px; 
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;  
+    border-radius: 20px; 
 }
 
 .tm-site-logo { margin-right: 30px; }
@@ -104,17 +106,18 @@ h2 { margin-top: 0; }
 .tm-page-link {
     min-width: 240px;
     height: 100px;
-    background-color: white;
-    color: #099;
+    background-color: #db98f0;
+    color: #311e36;
     display: flex;
     text-decoration: none;
     align-items: center;      
     font-size: 1.2rem;
+    border-radius: 20px;
 }
 
 .tm-page-link:hover,
 .tm-page-link.active {
-    background-color: #099;
+    background-color: #9363a1;
     color: white;
 }
 
@@ -124,19 +127,23 @@ h2 { margin-top: 0; }
     font-size: 1.5rem;
 }
 
+
+
 .tm-black-bg {
-    background-color: rgba(0,0,0,0.6);
+    background-color: #28182cbe;
     color: white;
+    border-radius: 20px;
 }
 
 .tm-drinks-nav > ul > li { display: inline-block; }
 
 .tm-drinks-nav > ul > li > a {
-    color: white;
-    font-size: 1.2rem;
+    color: #db98f0;
+    font-size: 1.5rem;
     padding-top: 15px;
     padding-bottom: 5px;
     border-bottom: 3px solid transparent;
+    border-radius: 5px;
 }
 
 .tm-drinks-nav { height: 80px; }
@@ -147,12 +154,14 @@ h2 { margin-top: 0; }
     align-items: center;
     justify-content: space-around;
     height: 100%;
+    border-radius: 20px;
 }
 
 .tm-drinks-nav > ul > li a.active,
 .tm-drinks-nav > ul > li a:hover {
-    color: #96FEFF;
-    border-bottom: 4px solid #96FEFF;
+    color: #9363a1;
+    border-bottom: 7px solid #db98f0;
+    border-radius: 20px;
 }
 
 .tm-list-item {
@@ -165,10 +174,12 @@ h2 { margin-top: 0; }
 .tm-list-item-2 { align-items: flex-start; }
 
 .tm-list-item-img {
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 160px;
     height: 160px;
-    background-color: #099;
+    background-color: #db98f0;
+    border-radius: 40%;
 }
 
 .tm-list-item-img-big {
@@ -190,7 +201,7 @@ h2 { margin-top: 0; }
     margin-top: 0;
 }
 
-.tm-list-item-price { color: #96FEFF; }
+.tm-list-item-price { color: #db98f0; }
 .tm-site-footer { margin-top: 15px; }
 
 .tm-footer-text {
@@ -217,7 +228,7 @@ h2 { margin-top: 0; }
 }
 
 /* About */
-.tm-about-box-1 { padding: 40px 30px 50px 0; }
+.tm-about-box-1 { padding: 40px 30px 50px 0; margin-top: 15px; }
 .tm-about-box-2 { padding: 50px 40px 30px; }
 .tm-about-header { margin-left: 220px; }
 
@@ -228,9 +239,18 @@ h2 { margin-top: 0; }
     margin: -30px -10px 0;
 }
 
+
 .tm-special-item {
     max-width: 320px;
     margin: 30px 10px;
+}
+
+.tm-special-item img{
+    margin-top: 5%;
+    margin-left: 3.5%;
+    border-radius: 10%;
+    height: 150px;
+    width: 300px;
 }
 
 .tm-special-item-title { font-size: 1.4rem; }
