@@ -290,7 +290,7 @@ h2 { margin-top: 0; }
 .tm-form-control::placeholder { color: white; }
 
 .tm-btn-primary {
-    color: #099;
+    color: #db98f0;
     background-color: white;
     border: 0;
     padding: 12px 40px;
@@ -301,7 +301,7 @@ h2 { margin-top: 0; }
 
 .tm-btn-primary:hover {
     color: white;
-    background-color: #099;
+    background-color: #db98f0;
 }
 
 .tm-align-right {

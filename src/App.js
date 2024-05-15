@@ -147,25 +147,25 @@ function App() {
                   <li className="tm-page-nav-item">
                     <a href="#drink" className="tm-page-link active">
                       <i className="fas fa-mug-hot tm-page-link-icon" />
-                      <span>Меню</span>
+                      <span>Menu</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#about" className="tm-page-link">
                       <i className="fas fa-users tm-page-link-icon" />
-                      <span>О нас</span>
+                      <span>About Us</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#special" className="tm-page-link">
                       <i className="fas fa-glass-martini tm-page-link-icon" />
-                      <span>Акции</span>
+                      <span>How we began</span>
                     </a>
                   </li>
                   <li className="tm-page-nav-item">
                     <a href="#contact" className="tm-page-link">
                       <i className="fas fa-comments tm-page-link-icon" />
-                      <span>Контакты</span>
+                      <span>Contacts</span>
                     </a>
                   </li>
                 </ul>
@@ -220,14 +220,10 @@ function App() {
                     />
                     <div className="tm-list-item-text-2">
                       <p>
-                        Wave Cafe is a one-page video background HTML CSS template
-                        from Tooplate. You can use this for your business websites.
+                      For quite some time now, our employees have been planning to create the coffee shop of our dreams. 
+                      We are all friends with each other, and therefore we will be very glad if you appreciate our work.
                       </p>
-                      <p>
-                        You can also use this for your client websites which you get
-                        paid for your website services. Please tell your friends
-                        about us.
-                      </p>
+                  
                     </div>
                   </div>
                 </div>
@@ -236,8 +232,8 @@ function App() {
                     <div className="tm-list-item-text-2">
                       <h2 className="tm-text-primary">How we began</h2>
                       <p>
-                        If you wish to support us, please contact Tooplate. Thank
-                        you. Duis bibendum erat nec ipsum consectetur sodales.
+                      Our coffee shop started with the usual offer from our friend. 
+                      He liked the way we brewed coffee and suggested opening his own coffee shop.
                       </p>
                     </div>
                     <img
@@ -247,9 +243,7 @@ function App() {
                     />
                   </div>
                   <p>
-                    Donec non urna elit. Quisque ut magna in dui mattis iaculis eu
-                    finibus metus. Suspendisse vel mi a lacus finibus vehicula vel
-                    ut diam. Nam pellentesque, mi quis ullamcorper.
+                    
                   </p>
                 </div>
               </div>
@@ -264,8 +258,7 @@ function App() {
                         Special One
                       </h2>
                       <p className="tm-special-item-text">
-                        Here is a short text description for the first special item.
-                        You are not allowed to redistribute this template ZIP file.
+                      If this is your first time visiting our coffee shop, we provide a free drink service
                       </p>
                     </div>
                   </div>
@@ -337,9 +330,8 @@ function App() {
                 <div className="tm-black-bg tm-contact-text-container">
                   <h2 className="tm-text-primary">Contact Wave</h2>
                   <p>
-                    Wave Cafe Template has a video background. You can use this
-                    layout for your websites. Please contact Tooplate's Facebook
-                    page. Tell your friends about our website.
+                  If you would like to contact us personally and ask questions that interest you, you can use the feedback form.
+                  We are located at 87 Mirnaya Street
                   </p>
                 </div>
                 <div className="tm-black-bg tm-contact-form-container tm-align-right">
